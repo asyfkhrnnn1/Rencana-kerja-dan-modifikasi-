@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Rencana Kerja Modifikasi Mold</title>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     * {
       -webkit-print-color-adjust: exact !important;
@@ -18,14 +20,17 @@
         padding: 0 !important;
         margin: 0 !important;
       }
+
       .no-print {
         display: none !important;
       }
+
       .print-wrapper {
         overflow: visible !important;
         padding: 0 !important;
         margin: 0 !important;
       }
+
       .print-area {
         display: block !important;
         border: none !important;
@@ -36,30 +41,37 @@
         min-width: 100% !important;
         padding: 0 !important;
       }
+
       table {
         page-break-inside: auto;
         width: 100% !important;
       }
+
       tr {
         page-break-inside: avoid;
         page-break-after: auto;
       }
-      .bg-total-yellow, .bg-total-yellow td {
+
+      .bg-total-yellow,
+      .bg-total-yellow td {
         background-color: #facc15 !important;
       }
+
       @page {
         size: A4 landscape;
         margin: 8mm 10mm 8mm 10mm;
       }
     }
 
-    .sheet-table th, .sheet-table td {
+    .sheet-table th,
+    .sheet-table td {
       border: 1.5px solid #111827;
       word-break: break-word;
       overflow-wrap: break-word;
     }
 
-    .bg-total-yellow, .bg-total-yellow td {
+    .bg-total-yellow,
+    .bg-total-yellow td {
       background-color: #facc15 !important;
     }
 
@@ -67,87 +79,189 @@
       height: 7px;
       width: 7px;
     }
+
     .custom-scroll::-webkit-scrollbar-thumb {
       background: #cbd5e1;
       border-radius: 4px;
     }
   </style>
 </head>
+
 <body class="bg-slate-100 min-h-screen text-slate-800 font-sans pb-16 text-sm sm:text-base">
 
-  <!-- TOP NAV (no-print) -->
+  <!-- TOP NAV -->
   <header class="bg-slate-900 text-white px-4 sm:px-8 py-4 sm:py-5 flex items-center justify-between shadow-md no-print sticky top-0 z-50">
+
     <div class="flex items-center gap-3 min-w-0">
+
       <div class="p-2.5 bg-indigo-600 rounded-xl text-white font-bold text-base sm:text-lg flex-shrink-0 shadow-sm">
         <i class="fa-solid fa-screwdriver-wrench"></i>
       </div>
+
       <div class="min-w-0">
-        <h1 class="font-bold text-sm sm:text-lg leading-tight truncate">Workshop Tooling Hub</h1>
+        <h1 class="font-bold text-sm sm:text-lg leading-tight truncate">
+          Workshop Tooling Hub
+        </h1>
+
         <p class="text-xs sm:text-sm text-slate-400 flex items-center gap-1.5 mt-0.5">
           <span class="truncate">Modifikasi Mold</span>
           <span class="text-emerald-400 font-semibold">• API Connected</span>
         </p>
       </div>
+
     </div>
+
     <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-      <button type="button" onclick="clearAllData()" class="px-3 sm:px-4 py-2.5 bg-slate-800 hover:bg-rose-900 text-slate-300 hover:text-white text-xs sm:text-sm font-semibold rounded-xl transition flex items-center gap-1.5 border border-slate-700">
-        <i class="fa-solid fa-trash-can"></i> <span class="hidden sm:inline">Reset</span>
+
+      <button
+        type="button"
+        onclick="clearAllData()"
+        class="px-3 sm:px-4 py-2.5 bg-slate-800 hover:bg-rose-900 text-slate-300 hover:text-white text-xs sm:text-sm font-semibold rounded-xl transition flex items-center gap-1.5 border border-slate-700"
+      >
+        <i class="fa-solid fa-trash-can"></i>
+        <span class="hidden sm:inline">Reset</span>
       </button>
-      <button type="button" onclick="previewPDF()" class="px-4 sm:px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center gap-2 shadow-md shadow-indigo-600/30">
-        <i class="fa-solid fa-file-pdf"></i> <span>Cetak PDF</span>
+
+      <button
+        type="button"
+        onclick="previewPDF()"
+        class="px-4 sm:px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center gap-2 shadow-md shadow-indigo-600/30"
+      >
+        <i class="fa-solid fa-file-pdf"></i>
+        <span>Cetak PDF</span>
       </button>
+
     </div>
   </header>
 
+
   <div class="max-w-screen-2xl mx-auto px-4 sm:px-8 mt-5 sm:mt-8 space-y-6 sm:space-y-8 no-print">
-    
-    <!-- STEP 1: FORM DATA AWAL MOLD -->
+
+    <!-- STEP 1 -->
     <section class="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-slate-200">
+
       <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-3.5 mb-5 gap-1.5">
+
         <h2 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2.5">
-          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-600 text-white text-xs sm:text-sm flex items-center justify-center font-bold">1</span>
+
+          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-600 text-white text-xs sm:text-sm flex items-center justify-center font-bold">
+            1
+          </span>
+
           Informasi Utama Mold
+
         </h2>
-        <span class="text-xs sm:text-sm text-slate-400">* Tanggal mulai & selesai opsional (boleh kosong)</span>
+
+        <span class="text-xs sm:text-sm text-slate-400">
+          * Tanggal mulai & selesai opsional (boleh kosong)
+        </span>
+
       </div>
 
+
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 text-sm">
+
         <div>
-          <label class="block font-semibold text-slate-700 mb-1.5">Nama Mold *</label>
-          <input type="text" id="moldName" placeholder="Contoh: HAMBALAN LMG" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl font-bold text-slate-800 text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          <label class="block font-semibold text-slate-700 mb-1.5">
+            Nama Mold *
+          </label>
+
+          <input
+            type="text"
+            id="moldName"
+            placeholder="Contoh: HAMBALAN LMG"
+            class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl font-bold text-slate-800 text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          >
         </div>
+
+
         <div>
-          <label class="block font-semibold text-slate-700 mb-1.5">Pengerjaan</label>
-          <input type="text" id="moldJob" placeholder="Contoh: MODIFIKASI & REPAIR" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+          <label class="block font-semibold text-slate-700 mb-1.5">
+            Pengerjaan
+          </label>
+
+          <input
+            type="text"
+            id="moldJob"
+            placeholder="Contoh: MODIFIKASI & REPAIR"
+            class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+          >
         </div>
+
+
         <div>
-          <label class="block font-semibold text-slate-700 mb-1.5">Tanggal Mulai (Opsional)</label>
-          <input type="date" id="moldStartDate" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white">
+          <label class="block font-semibold text-slate-700 mb-1.5">
+            Tanggal Mulai (Opsional)
+          </label>
+
+          <input
+            type="date"
+            id="moldStartDate"
+            class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white"
+          >
         </div>
+
+
         <div>
-          <label class="block font-semibold text-slate-700 mb-1.5">Tanggal Selesai (Opsional)</label>
-          <input type="date" id="moldEndDate" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white">
+          <label class="block font-semibold text-slate-700 mb-1.5">
+            Tanggal Selesai (Opsional)
+          </label>
+
+          <input
+            type="date"
+            id="moldEndDate"
+            class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none bg-white"
+          >
         </div>
+
       </div>
     </section>
 
-    <!-- STEP 2: FORM TAMBAH CHECKPOINT -->
+
+    <!-- STEP 2 -->
     <section class="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-slate-200">
+
       <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b pb-3.5 mb-5 gap-1.5">
+
         <h2 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2.5">
-          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-600 text-white text-xs sm:text-sm flex items-center justify-center font-bold">2</span>
+
+          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-indigo-600 text-white text-xs sm:text-sm flex items-center justify-center font-bold">
+            2
+          </span>
+
           Input Checkpoint Pekerjaan
+
         </h2>
+
         <span class="text-xs sm:text-sm text-emerald-600 font-semibold flex items-center gap-1.5">
-          <i class="fa-solid fa-circle-check"></i> Tarif Biaya & Rumus HK (Total Jam / 20)
+
+          <i class="fa-solid fa-circle-check"></i>
+
+          Tarif Biaya & Rumus HK (Total Jam / 20)
+
         </span>
+
       </div>
 
-      <form id="cpForm" onsubmit="handleAddCheckpoint(event)" class="space-y-4 text-sm">
+
+      <form
+        id="cpForm"
+        onsubmit="handleAddCheckpoint(event)"
+        class="space-y-4 text-sm"
+      >
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 items-end">
+
           <div class="lg:col-span-3">
-            <label class="block font-semibold text-slate-700 mb-1.5">Kategori Bagian *</label>
-            <select id="cpCategory" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl bg-white font-medium text-sm sm:text-base">
+
+            <label class="block font-semibold text-slate-700 mb-1.5">
+              Kategori Bagian *
+            </label>
+
+            <select
+              id="cpCategory"
+              class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl bg-white font-medium text-sm sm:text-base"
+            >
               <option value="Cavity">Cavity (Base Cavity)</option>
               <option value="Core">Core (Base Core)</option>
               <option value="Sleder">Sleder / Slider</option>
@@ -156,16 +270,38 @@
               <option value="Spoting">Spoting</option>
               <option value="Lainnya">Lainnya / Umum</option>
             </select>
+
           </div>
+
 
           <div class="lg:col-span-4">
-            <label class="block font-semibold text-slate-700 mb-1.5">Uraian Pekerjaan *</label>
-            <input type="text" id="cpTask" placeholder="Contoh: Hilangkan Flashing Cavity" required class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+
+            <label class="block font-semibold text-slate-700 mb-1.5">
+              Uraian Pekerjaan *
+            </label>
+
+            <input
+              type="text"
+              id="cpTask"
+              placeholder="Contoh: Hilangkan Flashing Cavity"
+              required
+              class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            >
+
           </div>
 
+
           <div class="lg:col-span-3">
-            <label class="block font-semibold text-slate-700 mb-1.5">Proses / Mesin *</label>
-            <select id="cpProcess" onchange="previewRateNotice()" class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl bg-white font-medium uppercase text-sm sm:text-base">
+
+            <label class="block font-semibold text-slate-700 mb-1.5">
+              Proses / Mesin *
+            </label>
+
+            <select
+              id="cpProcess"
+              onchange="previewRateNotice()"
+              class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl bg-white font-medium uppercase text-sm sm:text-base"
+            >
               <option value="CNC">CNC (Rp 150.000/j)</option>
               <option value="MILLING">MILLING (Rp 50.000/j)</option>
               <option value="EDM">EDM (Rp 50.000/j)</option>
@@ -180,31 +316,76 @@
               <option value="LAS DAN MILLING">LAS DAN MILLING (Rp 50.000/j)</option>
               <option value="-">- (Manual/Check)</option>
             </select>
+
           </div>
+
 
           <div class="lg:col-span-2">
-            <label class="block font-semibold text-slate-700 mb-1.5">Est Waktu (Jam) *</label>
-            <input type="number" id="cpEst" step="0.5" min="0.5" placeholder="Jam" required class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+
+            <label class="block font-semibold text-slate-700 mb-1.5">
+              Est Waktu (Jam) *
+            </label>
+
+            <input
+              type="number"
+              id="cpEst"
+              step="0.5"
+              min="0.5"
+              placeholder="Jam"
+              required
+              class="w-full px-3.5 py-2.5 sm:py-3 border border-slate-300 rounded-xl text-sm sm:text-base focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+            >
+
           </div>
+
         </div>
+
 
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
-          <p id="rateNote" class="text-xs sm:text-sm text-slate-500 italic">Tarif acuan: Rp 150.000 / jam</p>
-          <button type="submit" class="w-full sm:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-md shadow-indigo-600/20 text-sm sm:text-base">
-            <i class="fa-solid fa-plus-circle"></i> Tambah Checkpoint
+
+          <p
+            id="rateNote"
+            class="text-xs sm:text-sm text-slate-500 italic"
+          >
+            Tarif acuan: Rp 150.000 / jam
+          </p>
+
+          <button
+            type="submit"
+            class="w-full sm:w-auto px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-md shadow-indigo-600/20 text-sm sm:text-base"
+          >
+            <i class="fa-solid fa-plus-circle"></i>
+            Tambah Checkpoint
           </button>
+
         </div>
+
       </form>
 
-      <!-- TABEL REKAP LIVE EDIT -->
+
+      <!-- TABEL REKAP LIVE -->
       <div class="mt-6 border border-slate-200 rounded-2xl overflow-hidden shadow-xs">
+
         <div class="bg-slate-50 px-4 sm:px-5 py-3 border-b border-slate-200 flex justify-between items-center text-xs sm:text-sm font-bold">
+
           <span>Daftar Checkpoint (Dikelompokkan)</span>
-          <span id="badgeCount" class="text-indigo-600 font-bold bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full">0 Item</span>
+
+          <span
+            id="badgeCount"
+            class="text-indigo-600 font-bold bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full"
+          >
+            0 Item
+          </span>
+
         </div>
+
+
         <div class="overflow-x-auto custom-scroll">
+
           <table class="w-full text-left text-xs sm:text-sm whitespace-nowrap min-w-[700px]">
+
             <thead class="bg-slate-100 text-slate-600 uppercase text-xs font-bold border-b">
+
               <tr>
                 <th class="p-3">Kategori</th>
                 <th class="p-3">Uraian Pekerjaan</th>
@@ -214,139 +395,314 @@
                 <th class="p-3 text-right">Total Biaya</th>
                 <th class="p-3 text-center">Aksi</th>
               </tr>
+
             </thead>
-            <tbody id="liveTableBody" class="divide-y divide-slate-100 bg-white"></tbody>
+
+            <tbody
+              id="liveTableBody"
+              class="divide-y divide-slate-100 bg-white"
+            ></tbody>
+
           </table>
+
         </div>
 
-        <!-- LINK / TOMBOL WA FORMAT CHECK POINTS PENGERJAAN -->
+
+        <!-- WHATSAPP -->
         <div class="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
+
           <p class="text-xs sm:text-sm text-slate-500 flex items-center gap-2">
+
             <i class="fa-solid fa-circle-info text-indigo-500 text-base"></i>
+
             Kirim daftar checklist (hanya kategori & uraian tugas) langsung ke WhatsApp Check Points Pengerjaan.
+
           </p>
-          <button type="button" onclick="sendCheckPointsToWA()" class="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20">
-            <i class="fa-brands fa-whatsapp text-base"></i> Kirim Check Points ke WA
+
+
+          <button
+            type="button"
+            onclick="sendCheckPointsToWA()"
+            class="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center justify-center gap-2 shadow-md shadow-emerald-600/20"
+          >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            Kirim Check Points ke WA
           </button>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- SECTION ARSIR RIWAYAT PEKERJAAN (DATABASE API) -->
+
+    <!-- ARSIP -->
     <section class="bg-white p-5 sm:p-7 rounded-2xl shadow-sm border border-slate-200">
+
       <div class="flex items-center justify-between border-b pb-3.5 mb-4">
+
         <h2 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2.5">
-          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-500 text-white text-xs sm:text-sm flex items-center justify-center font-bold"><i class="fa-solid fa-box-archive text-xs"></i></span>
+
+          <span class="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-amber-500 text-white text-xs sm:text-sm flex items-center justify-center font-bold">
+            <i class="fa-solid fa-box-archive text-xs"></i>
+          </span>
+
           Arsip Pekerjaan Selesai (Database Online)
+
         </h2>
-        <span id="archiveCount" class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full">0 Arsip Tersimpan</span>
+
+        <span
+          id="archiveCount"
+          class="text-xs font-bold text-slate-500 bg-slate-100 px-3 py-1 rounded-full"
+        >
+          0 Arsip Tersimpan
+        </span>
+
       </div>
-      <div id="archiveListContainer" class="space-y-3">
-        <!-- List arsip dari API akan dirender di sini -->
+
+
+      <div
+        id="archiveListContainer"
+        class="space-y-3"
+      >
+        <!-- Arsip dari API -->
       </div>
+
     </section>
+
   </div>
 
-  <!-- ==================== LEMBAR DOKUMEN PREVIEW & OUTPUT PDF ==================== -->
+
+  <!-- PREVIEW PDF -->
   <div class="px-4 sm:px-8 max-w-screen-2xl mx-auto print-wrapper">
+
     <div class="sm:hidden no-print mt-5 mb-2 flex items-center justify-between text-xs text-slate-500">
-      <span><i class="fa-solid fa-arrows-left-right mr-1"></i> Geser tabel untuk melihat seluruh kolom</span>
-      <span class="font-bold text-indigo-600">Landscape Mode</span>
+
+      <span>
+        <i class="fa-solid fa-arrows-left-right mr-1"></i>
+        Geser tabel untuk melihat seluruh kolom
+      </span>
+
+      <span class="font-bold text-indigo-600">
+        Landscape Mode
+      </span>
+
     </div>
 
+
     <div class="overflow-x-auto custom-scroll pb-6 print-wrapper">
-      <main id="pdfPrintArea" class="w-[1100px] 2xl:w-full max-w-[1300px] mx-auto bg-white p-7 sm:p-10 shadow-xl border border-slate-300 print-area rounded-sm mt-3 sm:mt-8">
-        
-        <!-- JUDUL DOKUMEN -->
+
+      <main
+        id="pdfPrintArea"
+        class="w-[1100px] 2xl:w-full max-w-[1300px] mx-auto bg-white p-7 sm:p-10 shadow-xl border border-slate-300 print-area rounded-sm mt-3 sm:mt-8"
+      >
+
+        <!-- JUDUL -->
         <h2 class="text-center font-extrabold text-base sm:text-lg tracking-wider uppercase mb-6 text-black">
           RENCANA KERJA MODIFIKASI & PEMBUATAN MOLD
         </h2>
 
-        <!-- HEADER INFORMASI MOLD (3 KOLOM SEJAJAR) -->
+
+        <!-- HEADER -->
         <div class="grid grid-cols-12 text-xs sm:text-sm font-bold text-black uppercase mb-5 leading-relaxed">
+
           <div class="col-span-4 space-y-1.5">
+
             <div class="flex">
               <span class="w-32 flex-shrink-0">NAMA MOLD</span>
               <span class="mr-2">:</span>
               <span id="outMoldName" class="font-extrabold">-</span>
             </div>
+
             <div class="flex">
               <span class="w-32 flex-shrink-0">PENGERJAAN</span>
               <span class="mr-2">:</span>
               <span id="outMoldJob" class="font-normal">-</span>
             </div>
+
           </div>
 
+
           <div class="col-span-4 space-y-1.5">
+
             <div class="flex">
               <span class="w-40 flex-shrink-0">START / TANGGAL</span>
               <span class="mr-2">:</span>
               <span id="outStartDate" class="font-normal">-</span>
             </div>
+
             <div class="flex">
               <span class="w-40 flex-shrink-0">ESTIMASI HK</span>
               <span class="mr-2">:</span>
               <span id="outHK" class="font-extrabold">0,0 HK</span>
             </div>
+
           </div>
 
+
           <div class="col-span-4 space-y-1.5">
+
             <div class="flex">
               <span class="w-44 flex-shrink-0">SELESAI / TANGGAL</span>
               <span class="mr-2">:</span>
               <span id="outEndDate" class="font-normal">-</span>
             </div>
+
           </div>
+
         </div>
 
-        <!-- TABEL UTAMA RENCANA KERJA -->
+
+        <!-- TABEL PDF -->
         <table class="w-full sheet-table text-xs sm:text-sm border-collapse text-black table-fixed">
+
           <thead>
+
             <tr class="font-extrabold uppercase text-center bg-slate-50">
+
               <th class="p-2 w-[6%] text-center">NO</th>
-              <th class="p-2 w-[34%] text-center">URAIAN PEKERJAAN</th>
-              <th class="p-2 w-[12%] text-center">PROSES</th>
-              <th class="p-2 w-[10%] text-center">ESTIMASI WAKTU (JAM)</th>
-              <th class="p-2 w-[13%] text-center">AKTUAL WAKTU (JAM) / BIAYA</th>
-              <th class="p-2 w-[11%] text-center">PIC</th>
-              <th class="p-2 w-[14%] text-center">ILUSTRASI</th>
+
+              <th class="p-2 w-[34%] text-center">
+                URAIAN PEKERJAAN
+              </th>
+
+              <th class="p-2 w-[12%] text-center">
+                PROSES
+              </th>
+
+              <th class="p-2 w-[10%] text-center">
+                ESTIMASI WAKTU (JAM)
+              </th>
+
+              <th class="p-2 w-[13%] text-center">
+                AKTUAL WAKTU (JAM) / BIAYA
+              </th>
+
+              <th class="p-2 w-[11%] text-center">
+                PIC
+              </th>
+
+              <th class="p-2 w-[14%] text-center">
+                ILUSTRASI
+              </th>
+
             </tr>
+
           </thead>
+
+
           <tbody id="pdfTableBody"></tbody>
+
+
           <tfoot>
-            <tr class="font-extrabold bg-total-yellow text-black" style="background-color: #facc15 !important;">
-              <td colspan="3" class="p-2 text-left uppercase px-4 font-extrabold" style="background-color: #facc15 !important;">TOTAL</td>
-              <td id="pdfTotalJam" class="p-2 text-center font-bold" style="background-color: #facc15 !important;">0</td>
-              <td id="pdfTotalBiaya" class="p-2 text-right font-bold pr-3" style="background-color: #facc15 !important;">Rp 0</td>
-              <td colspan="2" class="p-2" style="background-color: #facc15 !important;"></td>
+
+            <tr
+              class="font-extrabold bg-total-yellow text-black"
+              style="background-color: #facc15 !important;"
+            >
+
+              <td
+                colspan="3"
+                class="p-2 text-left uppercase px-4 font-extrabold"
+                style="background-color: #facc15 !important;"
+              >
+                TOTAL
+              </td>
+
+              <td
+                id="pdfTotalJam"
+                class="p-2 text-center font-bold"
+                style="background-color: #facc15 !important;"
+              >
+                0
+              </td>
+
+              <td
+                id="pdfTotalBiaya"
+                class="p-2 text-right font-bold pr-3"
+                style="background-color: #facc15 !important;"
+              >
+                Rp 0
+              </td>
+
+              <td
+                colspan="2"
+                class="p-2"
+                style="background-color: #facc15 !important;"
+              ></td>
+
             </tr>
+
+
             <tr class="font-bold bg-white text-black">
-              <td colspan="3" class="p-2 text-left uppercase px-4">TOTAL HARI KERJA</td>
-              <td id="pdfTotalHK" class="p-2 text-center font-bold">0,0 HK</td>
+
+              <td colspan="3" class="p-2 text-left uppercase px-4">
+                TOTAL HARI KERJA
+              </td>
+
+              <td
+                id="pdfTotalHK"
+                class="p-2 text-center font-bold"
+              >
+                0,0 HK
+              </td>
+
               <td colspan="3" class="p-2"></td>
+
             </tr>
+
           </tfoot>
+
         </table>
 
-        <!-- TOMBOL SELESAI & SIMPAN KE ARSIP DATABASE -->
+
+        <!-- SIMPAN DATABASE -->
         <div class="mt-8 pt-4 border-t border-slate-200 flex justify-end no-print">
-          <button type="button" onclick="archiveCurrentProject()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition flex items-center gap-2 shadow-md shadow-emerald-600/30 text-sm sm:text-base">
-            <i class="fa-solid fa-circle-check"></i> <span>Selesai & Simpan ke Database API</span>
+
+          <button
+            type="button"
+            onclick="archiveCurrentProject()"
+            class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl transition flex items-center gap-2 shadow-md shadow-emerald-600/30 text-sm sm:text-base"
+          >
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>Selesai & Simpan ke Database API</span>
+
           </button>
+
         </div>
 
       </main>
+
     </div>
+
   </div>
 
+
   <script>
-    // URL Endpoint API Backend Online (Ganti dengan URL Render/Railway Anda nanti)
+
+    // =========================================================
+    // API
+    // =========================================================
+
     const API_URL = '/api/archives';
+
+
+    // =========================================================
+    // LOCAL STORAGE
+    // =========================================================
 
     const STORAGE_KEY_CHECKPOINTS = 'modifikasi_mold_checkpoints';
     const STORAGE_KEY_INFO = 'modifikasi_mold_info';
 
+
+    // =========================================================
+    // TARIF PROSES
+    // =========================================================
+
     const PROCESS_RATES = {
+
       "CNC": 150000,
       "MILLING": 50000,
       "EDM": 50000,
@@ -361,422 +717,1533 @@
       "REAMER": 20000,
       "LAS DAN MILLING": 50000,
       "-": 20000
+
     };
 
-    let checkpoints = JSON.parse(localStorage.getItem(STORAGE_KEY_CHECKPOINTS)) || [];
-    let archives = []; // Arsip diambil dari database online via API
 
-    const categoryOrder = ["Cavity", "Core", "Sleder", "Base Mold", "Ejector", "Spoting", "Lainnya"];
+    let checkpoints =
+      JSON.parse(
+        localStorage.getItem(STORAGE_KEY_CHECKPOINTS)
+      ) || [];
+
+
+    let archives = [];
+
+
+    const categoryOrder = [
+      "Cavity",
+      "Core",
+      "Sleder",
+      "Base Mold",
+      "Ejector",
+      "Spoting",
+      "Lainnya"
+    ];
+
+
+    // =========================================================
+    // SAVE DATA LOCAL
+    // =========================================================
 
     function saveAllData() {
-      localStorage.setItem(STORAGE_KEY_CHECKPOINTS, JSON.stringify(checkpoints));
+
+      localStorage.setItem(
+        STORAGE_KEY_CHECKPOINTS,
+        JSON.stringify(checkpoints)
+      );
+
+
       const info = {
-        moldName: document.getElementById('moldName').value,
-        moldJob: document.getElementById('moldJob').value,
-        moldStartDate: document.getElementById('moldStartDate').value,
-        moldEndDate: document.getElementById('moldEndDate').value
+
+        moldName:
+          document.getElementById('moldName').value,
+
+        moldJob:
+          document.getElementById('moldJob').value,
+
+        moldStartDate:
+          document.getElementById('moldStartDate').value,
+
+        moldEndDate:
+          document.getElementById('moldEndDate').value
+
       };
-      localStorage.setItem(STORAGE_KEY_INFO, JSON.stringify(info));
+
+
+      localStorage.setItem(
+        STORAGE_KEY_INFO,
+        JSON.stringify(info)
+      );
+
     }
+
+
+    // =========================================================
+    // LOAD DATA LOCAL
+    // =========================================================
 
     function loadSavedInfo() {
-      const saved = localStorage.getItem(STORAGE_KEY_INFO);
-      if (saved) {
-        try {
-          const info = JSON.parse(saved);
-          if (info.moldName !== undefined) document.getElementById('moldName').value = info.moldName;
-          if (info.moldJob !== undefined) document.getElementById('moldJob').value = info.moldJob;
-          if (info.moldStartDate !== undefined) document.getElementById('moldStartDate').value = info.moldStartDate;
-          if (info.moldEndDate !== undefined) document.getElementById('moldEndDate').value = info.moldEndDate;
-        } catch (e) {
-          console.error("Gagal membaca storage:", e);
+
+      const saved =
+        localStorage.getItem(STORAGE_KEY_INFO);
+
+
+      if (!saved) return;
+
+
+      try {
+
+        const info = JSON.parse(saved);
+
+
+        if (info.moldName !== undefined) {
+
+          document.getElementById('moldName').value =
+            info.moldName;
+
         }
+
+
+        if (info.moldJob !== undefined) {
+
+          document.getElementById('moldJob').value =
+            info.moldJob;
+
+        }
+
+
+        if (info.moldStartDate !== undefined) {
+
+          document.getElementById('moldStartDate').value =
+            info.moldStartDate;
+
+        }
+
+
+        if (info.moldEndDate !== undefined) {
+
+          document.getElementById('moldEndDate').value =
+            info.moldEndDate;
+
+        }
+
+      } catch (e) {
+
+        console.error(
+          "Gagal membaca storage:",
+          e
+        );
+
       }
+
     }
+
+
+    // =========================================================
+    // RESET
+    // =========================================================
 
     function clearAllData() {
-      if (confirm("Yakin ingin mengosongkan seluruh formulir dan checkpoint?")) {
-        checkpoints = [];
-        localStorage.removeItem(STORAGE_KEY_CHECKPOINTS);
-        localStorage.removeItem(STORAGE_KEY_INFO);
 
-        document.getElementById('moldName').value = '';
-        document.getElementById('moldJob').value = '';
-        document.getElementById('moldStartDate').value = '';
-        document.getElementById('moldEndDate').value = '';
-
-        renderAll();
+      if (
+        !confirm(
+          "Yakin ingin mengosongkan seluruh formulir dan checkpoint?"
+        )
+      ) {
+        return;
       }
+
+
+      checkpoints = [];
+
+
+      localStorage.removeItem(
+        STORAGE_KEY_CHECKPOINTS
+      );
+
+
+      localStorage.removeItem(
+        STORAGE_KEY_INFO
+      );
+
+
+      document.getElementById('moldName').value = '';
+      document.getElementById('moldJob').value = '';
+      document.getElementById('moldStartDate').value = '';
+      document.getElementById('moldEndDate').value = '';
+
+
+      renderAll();
+
     }
+
+
+    // =========================================================
+    // FORMAT RUPIAH
+    // =========================================================
 
     function formatRupiah(num) {
-      if (!num || isNaN(num)) return "Rp 0";
-      return "Rp " + Number(num).toLocaleString('id-ID') + ",00";
-    }
 
-    function previewRateNotice() {
-      const proc = document.getElementById('cpProcess').value;
-      const rate = PROCESS_RATES[proc] || 20000;
-      document.getElementById('rateNote').innerText = `Tarif acuan: ${formatRupiah(rate).replace(',00','')} / jam`;
-    }
+      if (!num || isNaN(num)) {
 
-    function handleAddCheckpoint(e) {
-      e.preventDefault();
-      const cat = document.getElementById('cpCategory').value;
-      const task = document.getElementById('cpTask').value.trim();
-      const proc = document.getElementById('cpProcess').value;
-      const est = Number(document.getElementById('cpEst').value) || 0;
+        return "Rp 0";
 
-      if (!task || est <= 0) return;
-
-      checkpoints.push({
-        id: Date.now(),
-        category: cat,
-        task: task,
-        process: proc,
-        estJam: est
-      });
-
-      document.getElementById('cpTask').value = '';
-      document.getElementById('cpEst').value = '';
-
-      saveAllData();
-      renderAll();
-    }
-
-    function removeCheckpoint(id) {
-      checkpoints = checkpoints.filter(cp => cp.id !== id);
-      saveAllData();
-      renderAll();
-    }
-
-    // FUNGSI SIMPAN ARSIP KE DATABASE API ONLINE
-    async function archiveCurrentProject() {
-      const moldName = document.getElementById('moldName').value.trim() || 'Tanpa Nama Mold';
-      if (checkpoints.length === 0) {
-        alert("Tidak ada checkpoint pekerjaan untuk diarsipkan.");
-        return;
       }
 
-      if (!confirm(`Selesaikan pekerjaan untuk mold "${moldName}" dan simpan ke Database Online?`)) return;
+
+      return (
+        "Rp " +
+        Number(num).toLocaleString('id-ID') +
+        ",00"
+      );
+
+    }
+
+
+    // =========================================================
+    // TARIF
+    // =========================================================
+
+    function previewRateNotice() {
+
+      const proc =
+        document.getElementById('cpProcess').value;
+
+
+      const rate =
+        PROCESS_RATES[proc] || 20000;
+
+
+      document.getElementById('rateNote').innerText =
+        `Tarif acuan: ${formatRupiah(rate).replace(',00', '')} / jam`;
+
+    }
+
+
+    // =========================================================
+    // TAMBAH CHECKPOINT
+    // =========================================================
+
+    function handleAddCheckpoint(e) {
+
+      e.preventDefault();
+
+
+      const cat =
+        document.getElementById('cpCategory').value;
+
+
+      const task =
+        document.getElementById('cpTask').value.trim();
+
+
+      const proc =
+        document.getElementById('cpProcess').value;
+
+
+      const est =
+        Number(
+          document.getElementById('cpEst').value
+        ) || 0;
+
+
+      if (!task || est <= 0) {
+
+        return;
+
+      }
+
+
+      checkpoints.push({
+
+        id: Date.now(),
+
+        category: cat,
+
+        task: task,
+
+        process: proc,
+
+        estJam: est
+
+      });
+
+
+      document.getElementById('cpTask').value = '';
+
+      document.getElementById('cpEst').value = '';
+
+
+      saveAllData();
+
+      renderAll();
+
+    }
+
+
+    // =========================================================
+    // HAPUS CHECKPOINT LOKAL
+    // =========================================================
+
+    function removeCheckpoint(id) {
+
+      checkpoints =
+        checkpoints.filter(
+          cp => cp.id !== id
+        );
+
+
+      saveAllData();
+
+      renderAll();
+
+    }
+
+
+    // =========================================================
+    // SIMPAN ARSIP KE DATABASE
+    // =========================================================
+
+    async function archiveCurrentProject() {
+
+      const moldName =
+        document
+          .getElementById('moldName')
+          .value
+          .trim() || 'Tanpa Nama Mold';
+
+
+      if (checkpoints.length === 0) {
+
+        alert(
+          "Tidak ada checkpoint pekerjaan untuk diarsipkan."
+        );
+
+        return;
+
+      }
+
+
+      if (
+        !confirm(
+          `Selesaikan pekerjaan untuk mold "${moldName}" dan simpan ke Database Online?`
+        )
+      ) {
+
+        return;
+
+      }
+
 
       const archiveItem = {
+
         id: Date.now(),
-        archiveDate: new Date().toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }),
+
+        archiveDate:
+          new Date().toLocaleDateString(
+            'id-ID',
+            {
+              day: '2-digit',
+              month: 'short',
+              year: 'numeric',
+              hour: '2-digit',
+              minute: '2-digit'
+            }
+          ),
+
         moldName: moldName,
-        moldJob: document.getElementById('moldJob').value.trim() || '-',
-        moldStartDate: document.getElementById('moldStartDate').value || '-',
-        moldEndDate: document.getElementById('moldEndDate').value || '-',
+
+        moldJob:
+          document
+            .getElementById('moldJob')
+            .value
+            .trim() || '-',
+
+        moldStartDate:
+          document
+            .getElementById('moldStartDate')
+            .value || '-',
+
+        moldEndDate:
+          document
+            .getElementById('moldEndDate')
+            .value || '-',
+
         checkpoints: checkpoints
+
       };
 
+
       try {
-        const response = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(archiveItem)
-        });
 
-        if (!response.ok) throw new Error('Gagal menyimpan ke server API');
+        const response =
+          await fetch(
+            API_URL,
+            {
+              method: 'POST',
 
-        alert("Pekerjaan berhasil diselesaikan dan disimpan ke Database Aiven MySQL!");
+              headers: {
+                'Content-Type':
+                  'application/json'
+              },
 
-        // Reset form aktif setelah berhasil diarsipkan
+              body:
+                JSON.stringify(
+                  archiveItem
+                )
+            }
+          );
+
+
+        if (!response.ok) {
+
+          let errorMessage =
+            'Gagal menyimpan ke server API';
+
+
+          try {
+
+            const errorData =
+              await response.json();
+
+
+            if (errorData.error) {
+
+              errorMessage =
+                errorData.error;
+
+            }
+
+          } catch (e) {
+
+            // Response bukan JSON
+
+          }
+
+
+          throw new Error(errorMessage);
+
+        }
+
+
+        alert(
+          "Pekerjaan berhasil diselesaikan dan disimpan ke Database Aiven MySQL!"
+        );
+
+
         checkpoints = [];
-        localStorage.removeItem(STORAGE_KEY_CHECKPOINTS);
-        localStorage.removeItem(STORAGE_KEY_INFO);
+
+
+        localStorage.removeItem(
+          STORAGE_KEY_CHECKPOINTS
+        );
+
+
+        localStorage.removeItem(
+          STORAGE_KEY_INFO
+        );
+
 
         document.getElementById('moldName').value = '';
         document.getElementById('moldJob').value = '';
         document.getElementById('moldStartDate').value = '';
         document.getElementById('moldEndDate').value = '';
 
-        fetchArchives();
+
+        renderAll();
+
+
+        await fetchArchives();
+
       } catch (err) {
-        console.error(err);
-        alert("Gagal menyimpan arsip ke database online. Pastikan backend server sudah aktif.");
+
+        console.error(
+          "Gagal menyimpan arsip:",
+          err
+        );
+
+
+        alert(
+          `Gagal menyimpan arsip ke database online.\n\n${err.message}`
+        );
+
       }
+
     }
 
-    // FUNGSI AMBIL ARSIP DARI API DATABASE ONLINE
+
+    // =========================================================
+    // AMBIL ARSIP DARI DATABASE
+    // =========================================================
+
     async function fetchArchives() {
+
+      const container =
+        document.getElementById(
+          'archiveListContainer'
+        );
+
+
       try {
-        const response = await fetch(API_URL);
-        if (!response.ok) throw new Error('Gagal memuat data arsip');
-        archives = await response.json();
-        renderArchives();
-      } catch (err) {
-        console.error("Gagal terhubung ke API:", err);
-        const container = document.getElementById('archiveListContainer');
-        if(container) {
-          container.innerHTML = `<p class="text-xs text-rose-500 italic py-2">Gagal memuat arsip dari database server (Pastikan URL backend API sudah aktif).</p>`;
+
+        const response =
+          await fetch(API_URL);
+
+
+        if (!response.ok) {
+
+          let errorMessage =
+            'Gagal memuat data arsip';
+
+
+          try {
+
+            const errorData =
+              await response.json();
+
+
+            if (errorData.error) {
+
+              errorMessage =
+                errorData.error;
+
+            }
+
+          } catch (e) {
+
+            // Response bukan JSON
+
+          }
+
+
+          throw new Error(errorMessage);
+
         }
+
+
+        const data =
+          await response.json();
+
+
+        archives =
+          Array.isArray(data)
+            ? data
+            : [];
+
+
+        renderArchives();
+
+      } catch (err) {
+
+        console.error(
+          "Gagal terhubung ke API:",
+          err
+        );
+
+
+        if (container) {
+
+          container.innerHTML = `
+            <p class="text-xs text-rose-500 italic py-2">
+              Gagal memuat arsip dari database server.
+              <br>
+              <span class="text-slate-400">
+                ${err.message}
+              </span>
+            </p>
+          `;
+
+        }
+
       }
+
     }
 
-    // FUNGSI HAPUS ARSIP DARI API DATABASE ONLINE
+
+    // =========================================================
+    // HAPUS ARSIP DARI DATABASE
+    // =========================================================
+
     async function deleteArchive(id) {
-      if (confirm("Hapus arsip ini dari database online?")) {
-        try {
-          const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
-          if (!response.ok) throw new Error('Gagal menghapus arsip');
-          fetchArchives();
-        } catch (err) {
-          console.error(err);
-          alert("Gagal menghapus arsip dari server.");
-        }
+
+      if (
+        !confirm(
+          "Hapus arsip ini dari database online?"
+        )
+      ) {
+
+        return;
+
       }
+
+
+      try {
+
+        const response =
+          await fetch(
+            `${API_URL}?id=${encodeURIComponent(id)}`,
+            {
+              method: 'DELETE'
+            }
+          );
+
+
+        if (!response.ok) {
+
+          let errorMessage =
+            'Gagal menghapus arsip';
+
+
+          try {
+
+            const errorData =
+              await response.json();
+
+
+            if (errorData.error) {
+
+              errorMessage =
+                errorData.error;
+
+            }
+
+          } catch (e) {
+
+            // Response bukan JSON
+
+          }
+
+
+          throw new Error(errorMessage);
+
+        }
+
+
+        await fetchArchives();
+
+
+        alert(
+          "Arsip berhasil dihapus dari database."
+        );
+
+      } catch (err) {
+
+        console.error(
+          "Gagal menghapus arsip:",
+          err
+        );
+
+
+        alert(
+          `Gagal menghapus arsip dari server.\n\n${err.message}`
+        );
+
+      }
+
     }
+
+
+    // =========================================================
+    // LOAD ARSIP
+    // =========================================================
 
     function loadArchive(id) {
-      const target = archives.find(item => item.id == id);
-      if (!target) return;
 
-      const mName = target.mold_name || target.moldName;
-      const mJob = target.mold_job || target.moldJob;
-      const mStart = target.mold_start_date || target.moldStartDate;
-      const mEnd = target.mold_end_date || target.moldEndDate;
+      const target =
+        archives.find(
+          item => item.id == id
+        );
 
-      if (confirm(`Muat kembali arsip "${mName}" ke lembar kerja aktif?`)) {
-        document.getElementById('moldName').value = mName;
-        document.getElementById('moldJob').value = mJob;
-        document.getElementById('moldStartDate').value = mStart !== '-' ? mStart : '';
-        document.getElementById('moldEndDate').value = mEnd !== '-' ? mEnd : '';
-        checkpoints = [...target.checkpoints];
+
+      if (!target) {
+
+        alert(
+          "Data arsip tidak ditemukan."
+        );
+
+        return;
+
+      }
+
+
+      const mName =
+        target.mold_name ||
+        target.moldName ||
+        '-';
+
+
+      const mJob =
+        target.mold_job ||
+        target.moldJob ||
+        '-';
+
+
+      const mStart =
+        target.mold_start_date ||
+        target.moldStartDate ||
+        '-';
+
+
+      const mEnd =
+        target.mold_end_date ||
+        target.moldEndDate ||
+        '-';
+
+
+      if (
+        confirm(
+          `Muat kembali arsip "${mName}" ke lembar kerja aktif?`
+        )
+      ) {
+
+        document.getElementById(
+          'moldName'
+        ).value = mName;
+
+
+        document.getElementById(
+          'moldJob'
+        ).value = mJob;
+
+
+        document.getElementById(
+          'moldStartDate'
+        ).value =
+          mStart !== '-'
+            ? mStart
+            : '';
+
+
+        document.getElementById(
+          'moldEndDate'
+        ).value =
+          mEnd !== '-'
+            ? mEnd
+            : '';
+
+
+        checkpoints =
+          Array.isArray(
+            target.checkpoints
+          )
+            ? [...target.checkpoints]
+            : [];
+
 
         saveAllData();
+
         renderAll();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+
       }
+
     }
+
+
+    // =========================================================
+    // RENDER ARSIP
+    // =========================================================
 
     function renderArchives() {
-      const container = document.getElementById('archiveListContainer');
-      document.getElementById('archiveCount').innerText = `${archives.length} Arsip Tersimpan`;
+
+      const container =
+        document.getElementById(
+          'archiveListContainer'
+        );
+
+
+      document.getElementById(
+        'archiveCount'
+      ).innerText =
+        `${archives.length} Arsip Tersimpan`;
+
+
       container.innerHTML = '';
 
+
       if (archives.length === 0) {
-        container.innerHTML = `<p class="text-xs text-slate-400 italic py-2">Belum ada riwayat arsip pekerjaan yang tersimpan di database.</p>`;
+
+        container.innerHTML = `
+          <p class="text-xs text-slate-400 italic py-2">
+            Belum ada riwayat arsip pekerjaan yang tersimpan di database.
+          </p>
+        `;
+
         return;
+
       }
+
 
       archives.forEach(item => {
-        const mName = item.mold_name || item.moldName;
-        const mJob = item.mold_job || item.moldJob;
-        const aDate = item.archive_date || item.archiveDate;
-        const totalJam = item.checkpoints.reduce((sum, cp) => sum + cp.estJam, 0);
+
+        const mName =
+          item.mold_name ||
+          item.moldName ||
+          '-';
+
+
+        const mJob =
+          item.mold_job ||
+          item.moldJob ||
+          '-';
+
+
+        const aDate =
+          item.archive_date ||
+          item.archiveDate ||
+          '-';
+
+
+        const itemCheckpoints =
+          Array.isArray(item.checkpoints)
+            ? item.checkpoints
+            : [];
+
+
+        const totalJam =
+          itemCheckpoints.reduce(
+            (sum, cp) =>
+              sum +
+              (Number(cp.estJam) || 0),
+            0
+          );
+
 
         container.innerHTML += `
+
           <div class="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-slate-50 border border-slate-200 rounded-xl gap-3">
+
             <div>
+
               <div class="flex items-center gap-2">
-                <span class="font-extrabold text-slate-800 text-sm sm:text-base">${mName}</span>
-                <span class="text-[10px] font-semibold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full">${mJob}</span>
+
+                <span class="font-extrabold text-slate-800 text-sm sm:text-base">
+                  ${mName}
+                </span>
+
+                <span class="text-[10px] font-semibold bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded-full">
+                  ${mJob}
+                </span>
+
               </div>
+
+
               <p class="text-xs text-slate-500 mt-1">
-                Diarsipkan pada: <span class="font-medium text-slate-700">${aDate}</span> • Total: <span class="font-semibold text-slate-700">${item.checkpoints.length} item</span> (${totalJam} Jam)
+
+                Diarsipkan pada:
+
+                <span class="font-medium text-slate-700">
+                  ${aDate}
+                </span>
+
+                •
+
+                Total:
+
+                <span class="font-semibold text-slate-700">
+                  ${itemCheckpoints.length} item
+                </span>
+
+                (${totalJam} Jam)
+
               </p>
+
             </div>
+
+
             <div class="flex items-center gap-2">
-              <button type="button" onclick="loadArchive(${item.id})" class="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-bold rounded-lg text-xs transition flex items-center gap-1">
-                <i class="fa-solid fa-folder-open"></i> Muat
+
+              <button
+                type="button"
+                onclick="loadArchive(${item.id})"
+                class="px-3 py-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-600 font-bold rounded-lg text-xs transition flex items-center gap-1"
+              >
+
+                <i class="fa-solid fa-folder-open"></i>
+
+                Muat
+
               </button>
-              <button type="button" onclick="deleteArchive(${item.id})" class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold rounded-lg text-xs transition flex items-center gap-1">
-                <i class="fa-solid fa-trash-can"></i> Hapus
+
+
+              <button
+                type="button"
+                onclick="deleteArchive(${item.id})"
+                class="px-3 py-1.5 bg-rose-50 hover:bg-rose-100 text-rose-600 font-bold rounded-lg text-xs transition flex items-center gap-1"
+              >
+
+                <i class="fa-solid fa-trash-can"></i>
+
+                Hapus
+
               </button>
+
             </div>
+
           </div>
+
         `;
+
       });
+
     }
+
+
+    // =========================================================
+    // WHATSAPP
+    // =========================================================
 
     function sendCheckPointsToWA() {
+
       if (checkpoints.length === 0) {
-        alert("Belum ada checkpoint yang dimasukkan.");
+
+        alert(
+          "Belum ada checkpoint yang dimasukkan."
+        );
+
         return;
+
       }
 
-      const mold = document.getElementById('moldName').value.trim() || '-';
-      const job = document.getElementById('moldJob').value.trim() || '-';
 
-      let msg = "*CHECK POINTS PENGERJAAN*\n";
-      msg += "=========================\n";
-      msg += "*Mold*       : " + mold + "\n";
-      msg += "*Pengerjaan* : " + job + "\n";
-      msg += "=========================\n\n";
+      const mold =
+        document
+          .getElementById('moldName')
+          .value
+          .trim() || '-';
+
+
+      const job =
+        document
+          .getElementById('moldJob')
+          .value
+          .trim() || '-';
+
+
+      let msg =
+        "*CHECK POINTS PENGERJAAN*\n";
+
+
+      msg +=
+        "=========================\n";
+
+
+      msg +=
+        "*Mold*       : " +
+        mold +
+        "\n";
+
+
+      msg +=
+        "*Pengerjaan* : " +
+        job +
+        "\n";
+
+
+      msg +=
+        "=========================\n\n";
+
 
       const grouped = {};
-      categoryOrder.forEach(c => grouped[c] = []);
+
+
+      categoryOrder.forEach(
+        c => grouped[c] = []
+      );
+
+
       checkpoints.forEach(cp => {
-        if (!grouped[cp.category]) grouped[cp.category] = [];
+
+        if (!grouped[cp.category]) {
+
+          grouped[cp.category] = [];
+
+        }
+
+
         grouped[cp.category].push(cp);
+
       });
 
-      categoryOrder.forEach(catKey => {
-        const items = grouped[catKey];
-        if (!items || items.length === 0) return;
 
-        let headerLabel = `BASE ${catKey.toUpperCase()}`;
-        if (catKey === 'Spoting') headerLabel = 'SPOTING';
-        if (catKey === 'Lainnya') headerLabel = 'CHECK & FINISHING UMUM';
+      categoryOrder.forEach(
+        catKey => {
 
-        msg += `*${headerLabel}*\n`;
-        items.forEach((item, idx) => {
-          msg += `[ ] ${idx + 1}. ${item.task}\n`;
-        });
-        msg += "\n";
-      });
+          const items =
+            grouped[catKey];
 
-      msg += "*Status:* Siap diverifikasi pada fisik mold.";
 
-      const encoded = encodeURIComponent(msg);
-      window.open(`https://wa.me/?text=${encoded}`, '_blank');
+          if (
+            !items ||
+            items.length === 0
+          ) {
+
+            return;
+
+          }
+
+
+          let headerLabel =
+            `BASE ${catKey.toUpperCase()}`;
+
+
+          if (
+            catKey === 'Spoting'
+          ) {
+
+            headerLabel = 'SPOTTING';
+
+          }
+
+
+          if (
+            catKey === 'Lainnya'
+          ) {
+
+            headerLabel =
+              'CHECK & FINISHING UMUM';
+
+          }
+
+
+          msg +=
+            `*${headerLabel}*\n`;
+
+
+          items.forEach(
+            (item, idx) => {
+
+              msg +=
+                `[ ] ${idx + 1}. ${item.task}\n`;
+
+            }
+          );
+
+
+          msg += "\n";
+
+        }
+      );
+
+
+      msg +=
+        "*Status:* Siap diverifikasi pada fisik mold.";
+
+
+      const encoded =
+        encodeURIComponent(msg);
+
+
+      window.open(
+        `https://wa.me/?text=${encoded}`,
+        '_blank'
+      );
+
     }
+
+
+    // =========================================================
+    // RENDER SEMUA
+    // =========================================================
 
     function renderAll() {
+
       const grouped = {};
-      categoryOrder.forEach(c => grouped[c] = []);
+
+
+      categoryOrder.forEach(
+        c => grouped[c] = []
+      );
+
 
       checkpoints.forEach(cp => {
-        if (!grouped[cp.category]) grouped[cp.category] = [];
+
+        if (!grouped[cp.category]) {
+
+          grouped[cp.category] = [];
+
+        }
+
+
         grouped[cp.category].push(cp);
+
       });
 
-      // 1. RENDER LIVE EDIT
-      const liveBody = document.getElementById('liveTableBody');
+
+      // =======================================================
+      // LIVE TABLE
+      // =======================================================
+
+      const liveBody =
+        document.getElementById(
+          'liveTableBody'
+        );
+
+
       liveBody.innerHTML = '';
-      document.getElementById('badgeCount').innerText = `${checkpoints.length} Item`;
+
+
+      document.getElementById(
+        'badgeCount'
+      ).innerText =
+        `${checkpoints.length} Item`;
+
 
       if (checkpoints.length === 0) {
-        liveBody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-slate-400 italic text-sm">Belum ada checkpoint ditambahkan. Silakan tambahkan pekerjaan melalui form di atas.</td></tr>`;
+
+        liveBody.innerHTML = `
+
+          <tr>
+
+            <td
+              colspan="7"
+              class="p-6 text-center text-slate-400 italic text-sm"
+            >
+              Belum ada checkpoint ditambahkan.
+              Silakan tambahkan pekerjaan melalui form di atas.
+            </td>
+
+          </tr>
+
+        `;
+
       } else {
-        categoryOrder.forEach(catKey => {
-          const items = grouped[catKey];
-          if (!items || items.length === 0) return;
 
-          const totalSubJam = items.reduce((sum, item) => sum + item.estJam, 0);
+        categoryOrder.forEach(
+          catKey => {
 
-          liveBody.innerHTML += `
-            <tr class="bg-indigo-50/70 border-t border-b border-indigo-100">
-              <td colspan="7" class="px-4 py-2 text-xs sm:text-sm font-bold text-indigo-900 tracking-wide uppercase">
-                <i class="fa-solid fa-folder-open mr-2 text-indigo-600"></i> Bagian: ${catKey} (${items.length} item • ${totalSubJam} Jam)
-              </td>
-            </tr>
-          `;
+            const items =
+              grouped[catKey];
 
-          items.forEach(cp => {
-            const rate = PROCESS_RATES[cp.process] || 20000;
-            const cost = cp.estJam * rate;
+
+            if (
+              !items ||
+              items.length === 0
+            ) {
+
+              return;
+
+            }
+
+
+            const totalSubJam =
+              items.reduce(
+                (sum, item) =>
+                  sum +
+                  (Number(item.estJam) || 0),
+                0
+              );
+
+
             liveBody.innerHTML += `
-              <tr class="hover:bg-slate-50 transition">
-                <td class="p-3 font-bold text-slate-600 pl-6">${cp.category}</td>
-                <td class="p-3 font-medium text-slate-800">${cp.task}</td>
-                <td class="p-3 font-mono uppercase font-bold text-indigo-700">${cp.process}</td>
-                <td class="p-3 text-center font-bold">${cp.estJam}</td>
-                <td class="p-3 text-right text-slate-500">${formatRupiah(rate).replace(',00','')}</td>
-                <td class="p-3 text-right font-bold text-slate-800">${formatRupiah(cost).replace(',00','')}</td>
-                <td class="p-3 text-center">
-                  <button type="button" onclick="removeCheckpoint(${cp.id})" class="text-slate-400 hover:text-rose-600 p-1.5 transition text-sm"><i class="fa-solid fa-trash-can"></i></button>
+
+              <tr class="bg-indigo-50/70 border-t border-b border-indigo-100">
+
+                <td
+                  colspan="7"
+                  class="px-4 py-2 text-xs sm:text-sm font-bold text-indigo-900 tracking-wide uppercase"
+                >
+
+                  <i class="fa-solid fa-folder-open mr-2 text-indigo-600"></i>
+
+                  Bagian:
+                  ${catKey}
+
+                  (${items.length} item • ${totalSubJam} Jam)
+
                 </td>
+
               </tr>
+
             `;
-          });
-        });
+
+
+            items.forEach(cp => {
+
+              const rate =
+                PROCESS_RATES[
+                  cp.process
+                ] || 20000;
+
+
+              const cost =
+                (Number(cp.estJam) || 0) *
+                rate;
+
+
+              liveBody.innerHTML += `
+
+                <tr class="hover:bg-slate-50 transition">
+
+                  <td class="p-3 font-bold text-slate-600 pl-6">
+                    ${cp.category}
+                  </td>
+
+                  <td class="p-3 font-medium text-slate-800">
+                    ${cp.task}
+                  </td>
+
+                  <td class="p-3 font-mono uppercase font-bold text-indigo-700">
+                    ${cp.process}
+                  </td>
+
+                  <td class="p-3 text-center font-bold">
+                    ${cp.estJam}
+                  </td>
+
+                  <td class="p-3 text-right text-slate-500">
+                    ${formatRupiah(rate).replace(',00', '')}
+                  </td>
+
+                  <td class="p-3 text-right font-bold text-slate-800">
+                    ${formatRupiah(cost).replace(',00', '')}
+                  </td>
+
+                  <td class="p-3 text-center">
+
+                    <button
+                      type="button"
+                      onclick="removeCheckpoint(${cp.id})"
+                      class="text-slate-400 hover:text-rose-600 p-1.5 transition text-sm"
+                    >
+
+                      <i class="fa-solid fa-trash-can"></i>
+
+                    </button>
+
+                  </td>
+
+                </tr>
+
+              `;
+
+            });
+
+          }
+        );
+
       }
 
-      // 2. RENDER HEADER MOLD
-      const moldName = document.getElementById('moldName').value.trim() || '-';
-      const moldJob = document.getElementById('moldJob').value.trim() || '-';
-      const startDate = document.getElementById('moldStartDate').value || '-';
-      const endDate = document.getElementById('moldEndDate').value || '-';
 
-      document.getElementById('outMoldName').innerText = moldName;
-      document.getElementById('outMoldJob').innerText = moldJob;
-      document.getElementById('outStartDate').innerText = startDate;
-      document.getElementById('outEndDate').innerText = endDate;
+      // =======================================================
+      // HEADER MOLD
+      // =======================================================
 
-      // 3. RENDER TABEL DOKUMEN PDF
-      const pdfBody = document.getElementById('pdfTableBody');
+      const moldName =
+        document
+          .getElementById('moldName')
+          .value
+          .trim() || '-';
+
+
+      const moldJob =
+        document
+          .getElementById('moldJob')
+          .value
+          .trim() || '-';
+
+
+      const startDate =
+        document
+          .getElementById('moldStartDate')
+          .value || '-';
+
+
+      const endDate =
+        document
+          .getElementById('moldEndDate')
+          .value || '-';
+
+
+      document.getElementById(
+        'outMoldName'
+      ).innerText = moldName;
+
+
+      document.getElementById(
+        'outMoldJob'
+      ).innerText = moldJob;
+
+
+      document.getElementById(
+        'outStartDate'
+      ).innerText = startDate;
+
+
+      document.getElementById(
+        'outEndDate'
+      ).innerText = endDate;
+
+
+      // =======================================================
+      // PDF TABLE
+      // =======================================================
+
+      const pdfBody =
+        document.getElementById(
+          'pdfTableBody'
+        );
+
+
       pdfBody.innerHTML = '';
 
+
       let totalJam = 0;
+
       let totalBiaya = 0;
+
       let rowNumber = 1;
 
+
       if (checkpoints.length === 0) {
+
         pdfBody.innerHTML = `
+
           <tr>
-            <td colspan="7" class="p-8 text-center text-slate-400 italic text-sm">Belum ada rincian pekerjaan yang dimasukkan.</td>
+
+            <td
+              colspan="7"
+              class="p-8 text-center text-slate-400 italic text-sm"
+            >
+              Belum ada rincian pekerjaan yang dimasukkan.
+            </td>
+
           </tr>
+
         `;
+
       } else {
-        categoryOrder.forEach(catKey => {
-          const items = grouped[catKey];
-          if (!items || items.length === 0) return;
 
-          let headerLabel = `BASE ${catKey.toUpperCase()}`;
-          if (catKey === 'Spoting') headerLabel = 'SPOTING';
-          if (catKey === 'Lainnya') headerLabel = 'CHECK & FINISHING UMUM';
+        categoryOrder.forEach(
+          catKey => {
 
-          const categoryNo = rowNumber++;
+            const items =
+              grouped[catKey];
 
-          let categoryBlockHTML = `
-            <tr class="text-black font-extrabold bg-slate-50/50">
-              <td class="p-2 text-center align-middle font-bold">${categoryNo}</td>
-              <td colspan="6" class="p-2 pl-3 uppercase font-extrabold tracking-wide whitespace-normal">${headerLabel}</td>
-            </tr>
-          `;
 
-          items.forEach(item => {
-            const rate = PROCESS_RATES[item.process] || 20000;
-            const cost = item.estJam * rate;
-            totalJam += item.estJam;
-            totalBiaya += cost;
+            if (
+              !items ||
+              items.length === 0
+            ) {
 
-            categoryBlockHTML += `
-              <tr class="text-black">
-                <td class="p-2 text-center"></td>
-                <td class="p-2 pl-4 font-medium whitespace-normal">
-                  <span class="inline-block mr-1.5 text-[9px]">•</span> ${item.task}
+              return;
+
+            }
+
+
+            let headerLabel =
+              `BASE ${catKey.toUpperCase()}`;
+
+
+            if (
+              catKey === 'Spoting'
+            ) {
+
+              headerLabel =
+                'SPOTTING';
+
+            }
+
+
+            if (
+              catKey === 'Lainnya'
+            ) {
+
+              headerLabel =
+                'CHECK & FINISHING UMUM';
+
+            }
+
+
+            const categoryNo =
+              rowNumber++;
+
+
+            let categoryBlockHTML = `
+
+              <tr class="text-black font-extrabold bg-slate-50/50">
+
+                <td class="p-2 text-center align-middle font-bold">
+                  ${categoryNo}
                 </td>
-                <td class="p-2 text-center uppercase font-semibold whitespace-normal">${item.process}</td>
-                <td class="p-2 text-center font-bold whitespace-normal">${item.estJam}</td>
-                <td class="p-2 text-right pr-3 whitespace-normal font-medium">${formatRupiah(cost)}</td>
-                <td class="p-2"></td>
-                <td class="p-2"></td>
-              </tr>
-            `;
-          });
 
-          pdfBody.innerHTML += categoryBlockHTML;
-        });
+                <td
+                  colspan="6"
+                  class="p-2 pl-3 uppercase font-extrabold tracking-wide whitespace-normal"
+                >
+                  ${headerLabel}
+                </td>
+
+              </tr>
+
+            `;
+
+
+            items.forEach(item => {
+
+              const rate =
+                PROCESS_RATES[
+                  item.process
+                ] || 20000;
+
+
+              const cost =
+                (Number(item.estJam) || 0) *
+                rate;
+
+
+              totalJam +=
+                Number(item.estJam) || 0;
+
+
+              totalBiaya += cost;
+
+
+              categoryBlockHTML += `
+
+                <tr class="text-black">
+
+                  <td class="p-2 text-center"></td>
+
+                  <td class="p-2 pl-4 font-medium whitespace-normal">
+
+                    <span class="inline-block mr-1.5 text-[9px]">
+                      •
+                    </span>
+
+                    ${item.task}
+
+                  </td>
+
+                  <td class="p-2 text-center uppercase font-semibold whitespace-normal">
+                    ${item.process}
+                  </td>
+
+                  <td class="p-2 text-center font-bold whitespace-normal">
+                    ${item.estJam}
+                  </td>
+
+                  <td class="p-2 text-right pr-3 whitespace-normal font-medium">
+                    ${formatRupiah(cost)}
+                  </td>
+
+                  <td class="p-2"></td>
+
+                  <td class="p-2"></td>
+
+                </tr>
+
+              `;
+
+            });
+
+
+            pdfBody.innerHTML +=
+              categoryBlockHTML;
+
+          }
+        );
+
       }
 
-      // UPDATE TOTAL & ESTIMASI HK (TOTAL JAM / 20)
-      document.getElementById('pdfTotalJam').innerText = totalJam;
-      document.getElementById('pdfTotalBiaya').innerText = formatRupiah(totalBiaya);
-      
-      const estimasiHK = (totalJam / 20).toFixed(1).replace('.', ',');
-      document.getElementById('pdfTotalHK').innerText = `${estimasiHK} HK`;
-      document.getElementById('outHK').innerText = `${estimasiHK} HK`;
+
+      // =======================================================
+      // TOTAL
+      // =======================================================
+
+      document.getElementById(
+        'pdfTotalJam'
+      ).innerText = totalJam;
+
+
+      document.getElementById(
+        'pdfTotalBiaya'
+      ).innerText =
+        formatRupiah(totalBiaya);
+
+
+      const estimasiHK =
+        (
+          totalJam / 20
+        )
+          .toFixed(1)
+          .replace('.', ',');
+
+
+      document.getElementById(
+        'pdfTotalHK'
+      ).innerText =
+        `${estimasiHK} HK`;
+
+
+      document.getElementById(
+        'outHK'
+      ).innerText =
+        `${estimasiHK} HK`;
+
     }
+
+
+    // =========================================================
+    // PRINT PDF
+    // =========================================================
 
     function previewPDF() {
+
       renderAll();
+
       window.print();
+
     }
 
-    ['moldName', 'moldJob', 'moldStartDate', 'moldEndDate'].forEach(id => {
-      document.getElementById(id).addEventListener('input', () => {
-        saveAllData();
-        renderAll();
-      });
+
+    // =========================================================
+    // INPUT LISTENER
+    // =========================================================
+
+    [
+      'moldName',
+      'moldJob',
+      'moldStartDate',
+      'moldEndDate'
+    ].forEach(id => {
+
+      const element =
+        document.getElementById(id);
+
+
+      element.addEventListener(
+        'input',
+        () => {
+
+          saveAllData();
+
+          renderAll();
+
+        }
+      );
+
     });
 
+
+    // =========================================================
+    // INITIAL LOAD
+    // =========================================================
+
     loadSavedInfo();
+
     previewRateNotice();
+
     renderAll();
-    fetchArchives(); // Ambil data arsip dari server database online saat halaman dimuat
+
+    fetchArchives();
+
   </script>
+
 </body>
 </html>
