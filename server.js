@@ -48,11 +48,10 @@ function initDatabase() {
 }
 
 // ENDPOINT: Ambil semua data arsip
-app.api = app.get('/api/archives', (req, res) => {
+app.get('/api/archives', (req, res) => {
   db.query('SELECT * FROM archives ORDER BY id DESC', (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
     
-    // Parse kembali JSON checkpoints
     const formatted = results.map(row => ({
       ...row,
       checkpoints: typeof row.checkpoints === 'string' ? JSON.parse(row.checkpoints) : row.checkpoints
