@@ -1626,27 +1626,33 @@
 
 
       let msg =
-        "*CHECK POINTS PENGERJAAN*\n";
+        "*CHECK POINTS PENGERJAAN*
+";
 
 
       msg +=
-        "=========================\n";
+        "=========================
+";
 
 
       msg +=
         "*Mold*       : " +
         mold +
-        "\n";
+        "
+";
 
 
       msg +=
         "*Pengerjaan* : " +
         job +
-        "\n";
+        "
+";
 
 
       msg +=
-        "=========================\n\n";
+        "=========================
+
+";
 
 
       const grouped = {};
@@ -1712,20 +1718,23 @@
 
 
           msg +=
-            `*${headerLabel}*\n`;
+            `*${headerLabel}*
+`;
 
 
           items.forEach(
             (item, idx) => {
 
               msg +=
-                `[ ] ${idx + 1}. ${item.task}\n`;
+                `[ ] ${idx + 1}. ${item.task}
+`;
 
             }
           );
 
 
-          msg += "\n";
+          msg += "
+";
 
         }
       );
@@ -1735,14 +1744,30 @@
         "*Status:* Siap diverifikasi pada fisik mold.";
 
 
-      const encoded =
+      const encodedMessage =
         encodeURIComponent(msg);
 
 
-      window.open(
-        `https://wa.me/?text=${encoded}`,
-        '_blank'
-      );
+      const whatsappURL =
+        `https://api.whatsapp.com/send?text=${encodedMessage}`;
+
+
+      const whatsappWindow =
+        window.open(
+          whatsappURL,
+          '_blank',
+          'noopener,noreferrer'
+        );
+
+
+      if (!whatsappWindow) {
+
+        alert(
+          "WhatsApp tidak dapat dibuka karena popup diblokir browser. " +
+          "Izinkan popup untuk website ini, lalu klik tombol Kirim Check Points ke WA lagi."
+        );
+
+      }
 
     }
 
