@@ -7,22 +7,21 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Melayani file statis dari folder public atau root
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname));
 
-// Koneksi ke Aiven MySQL menggunakan Environment Variable (DATABASE_URL)
+// Buat pool koneksi ke Aiven MySQL
 const pool = mysql.createPool({
   uri: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: true
+    rejectUnauthorized: false
   },
   waitForConnections: true,
-  connectionLimit: 10,
+  connectionLimit: 5,
   queueLimit: 0
 });
 
-// Buat tabel otomatis jika belum ada di database Aiven MySQL
+// Inisialisasi tabel otomatis
 pool.query(`
   CREATE TABLE IF NOT EXISTS mold_archives (
     id BIGINT PRIMARY KEY,
@@ -35,15 +34,13 @@ pool.query(`
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   )
 `, (err) => {
-  if (err) console.error("Gagal membuat tabel mold_archives:", err);
-  else console.log("Tabel database Aiven siap digunakan!");
+  if (err) console.error("Gagal membuat tabel:", err);
 });
 
-// API Endpoint: Ambil semua data arsip
+// API Routes
 app.get('/api/archives', (req, res) => {
   pool.query('SELECT * FROM mold_archives ORDER BY id DESC', (err, results) => {
     if (err) return res.status(500).json({ error: err.message });
-    // Parsing JSON checkpoints dari database
     const formatted = results.map(row => ({
       ...row,
       checkpoints: typeof row.checkpoints === 'string' ? JSON.parse(row.checkpoints) : row.checkpoints
@@ -52,7 +49,6 @@ app.get('/api/archives', (req, res) => {
   });
 });
 
-// API Endpoint: Simpan arsip baru
 app.post('/api/archives', (req, res) => {
   const { id, archiveDate, moldName, moldJob, moldStartDate, moldEndDate, checkpoints } = req.body;
   const query = `
@@ -60,13 +56,7 @@ app.post('/api/archives', (req, res) => {
     VALUES (?, ?, ?, ?, ?, ?, ?)
   `;
   const values = [
-    id, 
-    archiveDate, 
-    moldName, 
-    moldJob, 
-    moldStartDate, 
-    moldEndDate, 
-    JSON.stringify(checkpoints)
+    id, archiveDate, moldName, moldJob, moldStartDate, moldEndDate, JSON.stringify(checkpoints)
   ];
 
   pool.query(query, values, (err) => {
@@ -75,7 +65,6 @@ app.post('/api/archives', (req, res) => {
   });
 });
 
-// API Endpoint: Hapus arsip berdasarkan ID
 app.delete('/api/archives/:id', (req, res) => {
   const { id } = req.params;
   pool.query('DELETE FROM mold_archives WHERE id = ?', [id], (err) => {
@@ -84,5 +73,5 @@ app.delete('/api/archives/:id', (req, res) => {
   });
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server berjalan di port ${PORT}`));
+// PENTING: Export untuk Vercel Serverless Function
+module.exports = app;
